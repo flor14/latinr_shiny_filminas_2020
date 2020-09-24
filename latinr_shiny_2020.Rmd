@@ -28,6 +28,7 @@ xaringanExtra::use_share_again()
 library(xaringanthemer)
 style_mono_accent(
   base_color = "#43418A",
+  link_color = "#cabdff" , 
   header_font_google = google_font("Josefin Sans"),
   text_font_google   = google_font("Montserrat", "300", "300i"),
   code_font_google   = google_font("Fira Mono")
@@ -284,10 +285,25 @@ class: center, middle, inverse
 
 ---
 
-# Tabset panel
+# Paneles
 
-Se pueden agregar también paneles con la función `tabset()`
+.left-column[
+```{r adentro5, echo=FALSE, fig.align="center", out.width=300}
+knitr::include_graphics("tabs.png")
+```
+]
+ .right-column[
+Se puede organizar la información en paneles con `tabsetPanel()`, `navlistPage()` o `navbarPage()`.
 
+```{r eval=FALSE, include=TRUE}
+ui <- fluidPage(tabsetPanel(
+     tabPanel("tab 1", "contenido"),
+     tabPanel("tab 2", "contenido"),
+     tabPanel("tab 3", "contenido")))
+
+```
+
+]
 
 ---
 

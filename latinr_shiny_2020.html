@@ -248,10 +248,23 @@ class: center, middle, inverse
 
 ---
 
-# Tabset panel
+# Paneles
 
-Se pueden agregar también paneles con la función `tabset()`
+.left-column[
+&lt;img src="tabs.png" width="300" style="display: block; margin: auto;" /&gt;
+]
+ .right-column[
+Se puede organizar la información en paneles con `tabsetPanel()`, `navlistPage()` o `navbarPage()`.
 
+
+```r
+ui &lt;- fluidPage(tabsetPanel(
+     tabPanel("tab 1", "contenido"),
+     tabPanel("tab 2", "contenido"),
+     tabPanel("tab 3", "contenido")))
+```
+
+]
 
 ---
 
@@ -373,6 +386,13 @@ Ejemplos que incluyen [imagenes predeterminadas, pacmans y nubes de palabras](ht
 
 ---
 
+# `req()`
+
+Evita la ejecución antes que se seleccione la primer opción
+
+
+---
+
 
 class: center, middle
 
@@ -471,6 +491,10 @@ Observa las funciones `render*()` y `*Output()`
 
 ---
 
+
+
+---
+
 class: inverse, center, middle
 
 &lt;img src="appfinal.png" width="90%" style="display: block; margin: auto;" /&gt;
@@ -511,6 +535,11 @@ class: inverse, center, middle
 
 ---
 
+# Otros paquetes
+
+ShinyMobile
+
+
 
 
 ---
@@ -521,7 +550,9 @@ class: inverse, center, middle
  
  [Mastering Shiny](https://mastering-shiny.org/)
  
- [Shiny's Holy Grail - UseR! 2019 - Joe Cheng  video](https://www.youtube.com/watch?v=5KByRC6eqC8) 
+ [Shiny's Holy Grail - UseR! 2019 - Joe Cheng  video](https://www.youtube.com/watch?v=5KByRC6eqC8)
+ 
+ [Podcast Shiny]()
 
  [Tutorial R-Studio](https://shiny.rstudio.com/tutorial)
 
