@@ -504,7 +504,7 @@ ggplot(data = mpg)+
 ---
 
 class: center, middle, inverse
-## 🔌 Conecta la elección del usuarie en el input con el código en el servidor, y luego el código del servidor con la salida del código 🤔
+### 🔌 Conecta la elección del usuarie en el input con el código en el servidor, y luego el código del servidor con la salida del código 🤔🤯
 
 
 ---
@@ -517,12 +517,12 @@ knitr::include_graphics("reactivity.png")
 ---
 
 class: center, middle, inverse
-# 🔌 Conecta la elección en pantalla con el código✅
+# 🔌 Conecta la elección en pantalla del usuarie con el código en el servidor ✅
 
 
 
 ---
-## Referite a las entradas usando `input$<id>`
+## Referite a los valores de entrada (*inputs*) usando `input$<id>`
 
 ```{r react2, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("reactivity3.png")
@@ -532,7 +532,7 @@ knitr::include_graphics("reactivity3.png")
 
 
 class: center, middle, inverse
-# 🔌 Conecta código con la salida que se ve en la pantalla ✅
+# 🔌 Conecta el código en el servidor con lo que el usuario verá en la pantalla ✅
 
 ---
 
@@ -545,7 +545,7 @@ knitr::include_graphics("reactivity.png")
 
 # Funciones `render*()` y `*Output()` 
 
-Ayudan a conectar el código con la salida en pantalla.
+Conectan el código del servidor con la salida en pantalla.
 
 ```{r out, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("outputs.png")
