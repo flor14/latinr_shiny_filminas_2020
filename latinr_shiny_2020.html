@@ -204,7 +204,7 @@ class: center, middle
 `Ui &lt;- fluidPage(sidebarLayout(sidebarPanel(radioButtons(…)), mainPanel(…))`
 
 ---
-# Selección de inputs por el usuarie
+# Selección de inputs por el usuarie 🎚
 
 Argumentos de la función `radioButtons()` 
 
@@ -432,14 +432,8 @@ class: center, middle
 
 ---
 
-# Funciones `render*()` y `*Output()` 
 
-
-&lt;img src="outputs.png" width="90%" style="display: block; margin: auto;" /&gt;
-
----
-
-# Gráfico
+# Chequear que el código corre de antemano ✅
 
 
 ```r
@@ -461,21 +455,45 @@ ggplot(data = mpg)+
 
 ---
 
-## Referite a las entradas (*inputs*) usando `input$&lt;id&gt;`
+class: center, middle, inverse
+## 🔌 Conecta la elección del usuarie en el input con el código en el servidor, y luego el código del servidor con la salida del código 🤔
 
-&lt;img src="reactivity.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
+## Referite a las entradas (*inputs*) usando `input$&lt;id&gt;`
+
+&lt;img src="reactivity.png" width="90%" style="display: block; margin: auto;" /&gt;
+---
+
+class: center, middle, inverse
+# 🔌 Conecta la elección en pantalla con el código✅
+
+
+
+---
 ## Referite a las entradas usando `input$&lt;id&gt;`
 
 &lt;img src="reactivity3.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-## Referite a las salidas usando `output$&lt;id&gt;`
+
+class: center, middle, inverse
+# 🔌 Conecta código con la salida que se ve en la pantalla ✅
+
+---
+
+
 
 &lt;img src="reactivity.png" width="90%" style="display: block; margin: auto;" /&gt;
+---
+
+# Funciones `render*()` y `*Output()` 
+
+Ayudan a conectar el código con la salida en pantalla.
+
+&lt;img src="outputs.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -487,10 +505,45 @@ Observa las funciones `render*()` y `*Output()`
 
 ---
 
+# ¡Completamos la UI!
+
 &lt;img src="slide_mamu3.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
+
+class: inverse, center, middle
+
+# 💻 ¡Deja tu shiny app online!
+
+---
+
+# shinyapps.io
+
+* gratis hasta 5 apps
+
+
+---
+
+# Binder
+
+* gratis pero con ciertas limitaciones (por ejemplo, no carga paquetes que no esten en CRAN)
+
+[Blog en español para aprender a usar Binder en tu Shiny app](https://florencia.netlify.app/es-es/2020/08/compartiendo-entornos-interactivos-y-reproducibles-en-r-con-binder.es-es/)
+
+---
+
+# Armar un paquete 📦
+
+[]()
+---
+
+# Golem
+
+[Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)
+
+
+&lt;img src="golem.png" width="300" height="300" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -527,10 +580,6 @@ class: inverse, center, middle
 
 [Winners of the 1st Shiny Contest](https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/)
 
-
----
-
-# Golem
 
 
 ---

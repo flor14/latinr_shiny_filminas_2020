@@ -28,7 +28,7 @@ xaringanExtra::use_share_again()
 library(xaringanthemer)
 style_mono_accent(
   base_color = "#43418A",
-  link_color = "#cabdff" , 
+  link_color = "#e5b7ff" , 
   header_font_google = google_font("Josefin Sans"),
   text_font_google   = google_font("Montserrat", "300", "300i"),
   code_font_google   = google_font("Fira Mono")
@@ -229,7 +229,7 @@ knitr::include_graphics("slide_mamu2.png")
 `Ui <- fluidPage(sidebarLayout(sidebarPanel(radioButtons(…)), mainPanel(…))`
 
 ---
-# Selección de inputs por el usuarie
+# Selección de inputs por el usuarie 🎚
 
 Argumentos de la función `radioButtons()` 
 
@@ -489,16 +489,8 @@ knitr::include_graphics("server_react.png")
 
 ---
 
-# Funciones `render*()` y `*Output()` 
 
-
-```{r out, echo=FALSE, fig.align="center", out.width='90%'}
-knitr::include_graphics("outputs.png")
-```
-
----
-
-# Gráfico
+# Chequear que el código corre de antemano ✅
 
 ```{r plot1, echo=TRUE, fig.width=7, fig.height=5, fig.align = "center" }
 library(ggplot2)
@@ -511,26 +503,52 @@ ggplot(data = mpg)+
 
 ---
 
+class: center, middle, inverse
+## 🔌 Conecta la elección del usuarie en el input con el código en el servidor, y luego el código del servidor con la salida del código 🤔
+
+
+---
+
 ## Referite a las entradas (*inputs*) usando `input$<id>`
 
 ```{r react, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("reactivity.png")
 ```
-
 ---
 
+class: center, middle, inverse
+# 🔌 Conecta la elección en pantalla con el código✅
+
+
+
+---
 ## Referite a las entradas usando `input$<id>`
 
 ```{r react2, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("reactivity3.png")
-```
+``` 
 
 ---
 
-## Referite a las salidas usando `output$<id>`
+
+class: center, middle, inverse
+# 🔌 Conecta código con la salida que se ve en la pantalla ✅
+
+---
+
+
 
 ```{r react3, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("reactivity.png")
+```
+---
+
+# Funciones `render*()` y `*Output()` 
+
+Ayudan a conectar el código con la salida en pantalla.
+
+```{r out, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("outputs.png")
 ```
 
 ---
@@ -545,12 +563,49 @@ knitr::include_graphics("reactivity_plot.png")
 
 ---
 
+# ¡Completamos la UI!
+
 ```{r mamu3, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("slide_mamu3.png")
 ```
 
 ---
 
+
+class: inverse, center, middle
+
+# 💻 ¡Deja tu shiny app online!
+
+---
+
+# shinyapps.io
+
+* gratis hasta 5 apps
+
+
+---
+
+# Binder
+
+* gratis pero con ciertas limitaciones (por ejemplo, no carga paquetes que no esten en CRAN)
+
+[Blog en español para aprender a usar Binder en tu Shiny app](https://florencia.netlify.app/es-es/2020/08/compartiendo-entornos-interactivos-y-reproducibles-en-r-con-binder.es-es/)
+
+---
+
+# Armar un paquete 📦
+
+[]()
+---
+
+# Golem
+
+[Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)
+
+
+```{r golem, echo=FALSE, fig.align="center", out.height=300, out.width=300}
+knitr::include_graphics("golem.png")
+```
 
 
 ---
@@ -591,10 +646,6 @@ class: inverse, center, middle
 
 [Winners of the 1st Shiny Contest](https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/)
 
-
----
-
-# Golem
 
 
 ---
