@@ -19,6 +19,13 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r broadcast, echo=FALSE}
+xaringanExtra::use_broadcast()
+```
 
 ```{r share-again, echo=FALSE}
 xaringanExtra::use_share_again()
@@ -93,7 +100,7 @@ shinyApp (ui = ui, server = server)
 
 Podes insertar el template usando la plantilla precargada
 
-```{r init2, echo=FALSE, fig.align="center", out.width='25%'}
+```{r init2, echo=FALSE, fig.align="center", out.width='50%'}
 knitr::include_graphics("snippet_2.png")
 ```
 
@@ -155,12 +162,12 @@ knitr::include_graphics("run_app.png")
 
 # Guía Rápida
 
+[¡Click de descarga aquí!](https://shiny.rstudio.com/articles/cheatsheet.html)
 
 ```{r rstudio_cheat, echo=FALSE, fig.align="center", out.width='80%'}
 knitr::include_graphics("cheatsheet.png")
 ```
 
-.footnote[¡Click aquí!: https://shiny.rstudio.com/articles/cheatsheet.html]
 
 
 ---
@@ -172,11 +179,61 @@ class: center, middle
 ```{r mamus, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("mamu_4.jpg")
 ```
+
+---
+
+# ¿Cómo organizo la UI?
+
+--
+### ➕ Paneles
+
+- Agrego capas 🧅 
+
+--
+
+### ➕ Funciones de diseño 
+
+- Organizo los elementos dentro de la estructura elegida (arriba, bajo, derecha, izquierda, etc)
+
+
+---
+
+
+class: center, middle, inverse
+
+# Alternando entre paneles
+
+---
+
+# Organizando la app en capas
+
+.left-column[
+```{r adentro5, echo=FALSE, fig.align="center", out.width=300}
+knitr::include_graphics("tabs.png")
+```
+]
+ .right-column[
+Se puede organizar la información en paneles con
+* `tabsetPanel()`
+* `navlistPage()` 
+* `navbarPage()`.
+
+```{r eval=FALSE, include=TRUE}
+ui <- fluidPage(tabsetPanel(
+     tabPanel("tab 1", "contenido"),
+     tabPanel("tab 2", "contenido"),
+     tabPanel("tab 3", "contenido")))
+
+```
+
+]
+
 ---
 
 class: center, middle, inverse
 
 # Funciones de diseño (*layout*)
+
 ---
 
 # Diseño
@@ -198,6 +255,27 @@ knitr::include_graphics("slide_mamu1.png")
 ```
 
 `Ui <- fluidPage(sidebarLayout(sidebarPanel(…), mainPanel(…))`
+
+---
+
+# Pestañas y diseño de paneles
+
+Estructura de una app con dos pestañas. Dentro de cada pestaña hay una barra lateral y un panel principal
+
+```{r eval=FALSE, include=TRUE}
+
+ui <- fluidPage(navbarPage(title = "Datos",
+                           tabPanel(title = "panel 1", 
+                                    sidebarLayout( #<<
+                                    sidebarPanel(),#<<
+                             mainPanel()) #<<
+                             ), 
+                           tabPanel(title = "panel 2", 
+                                    sidebarLayout( #<<
+                                    sidebarPanel(),#<< 
+                             mainPanel())) #<<
+                           ))
+```
 
 
 
@@ -276,34 +354,6 @@ knitr::include_graphics("closing_par.png")
 
 ```
 
----
-
-
-class: center, middle, inverse
-
-# Tabset panel
-
----
-
-# Paneles
-
-.left-column[
-```{r adentro5, echo=FALSE, fig.align="center", out.width=300}
-knitr::include_graphics("tabs.png")
-```
-]
- .right-column[
-Se puede organizar la información en paneles con `tabsetPanel()`, `navlistPage()` o `navbarPage()`.
-
-```{r eval=FALSE, include=TRUE}
-ui <- fluidPage(tabsetPanel(
-     tabPanel("tab 1", "contenido"),
-     tabPanel("tab 2", "contenido"),
-     tabPanel("tab 3", "contenido")))
-
-```
-
-]
 
 ---
 
