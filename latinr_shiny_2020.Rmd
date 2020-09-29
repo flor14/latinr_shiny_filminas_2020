@@ -291,10 +291,10 @@ ui <- fluidPage(navbarPage(title = "Datos",
 ```
 
 --
-Estructura de una app que pose una barra de navegación `navbarPage()` con dos paneles `tabPanel()`.
+* Estructura de una app que pose una barra de navegación `navbarPage()` con dos paneles `tabPanel()`.
 
 --
-Dentro de cada panel hay una función de diseño `sidebarLayout()` que permite incluir una barra lateral `sidebarPanel()` y un area principal `mainPanel()`
+* Dentro de cada panel hay una función de diseño `sidebarLayout()` que permite incluir una barra lateral `sidebarPanel()` y un area principal `mainPanel()`
 
 ---
 
