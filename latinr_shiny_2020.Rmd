@@ -2,8 +2,8 @@
 title: "Aplicaciones Web Interactivas con Shiny "
 subtitle: ""
 author: "✨ 💻 ✨ "
-institute: "LatinR 2020"
-date: "8/10/2020"
+institute: "Conferencia LatinR"
+date: "2020"
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
