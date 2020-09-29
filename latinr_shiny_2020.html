@@ -79,13 +79,13 @@ Los usuarios pueden manipular la UI,  lo cual lleva al server (_servidor_) a env
 ```r
 library(shiny)
 
-# User interfase
-UI &lt;- fluidPage( ) 
+# Interfaz de usuario (UI de las siglas en inglés)
+ui &lt;- fluidPage( ) 
 
-# Server
+# Servidor
 Server &lt;- function(input, output){      }
 
-# Combines UI and server
+# Combino UI y Servidor
 shinyApp (ui = ui, server = server)
 ```
 
@@ -93,9 +93,9 @@ shinyApp (ui = ui, server = server)
 
 # Snippets
 
-Podes insertar el template usando la plantilla precargada
+Podes insertar la plantilla precargada
 
-&lt;img src="snippet_2.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="snippet_2.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -123,11 +123,12 @@ Podes insertar el template usando la plantilla precargada
 
 **Server**
 
+1. Referite a las entradas esperadas usando `input$&lt;id&gt;`
+
 1. Selecciona las funciones `render*()` y `*Output()` 
 
 1. Referite a las salidas esperadas usando `output$&lt;id&gt;`
 
-1. Referite a las entradas esperadas usando `input$&lt;id&gt;`
 
 ]
 
@@ -151,7 +152,7 @@ Podes insertar el template usando la plantilla precargada
 
 # Guía Rápida
 
-[¡Click de descarga aquí!](https://shiny.rstudio.com/articles/cheatsheet.html)
+[¡Click de descarga de la versión en español!](https://github.com/rstudio/cheatsheets/raw/master/translations/spanish/shiny_Spanish.pdf)
 
 &lt;img src="cheatsheet.png" width="80%" style="display: block; margin: auto;" /&gt;
 
@@ -164,6 +165,18 @@ class: center, middle
 # User Interfase (UI)
 
 &lt;img src="mamu_4.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# ¿Qué es la interfaz de usuario?
+
+&gt; La UI es dónde define cómo se verá su aplicación. 
+
+--
+
+&gt; Las funciones de Shiny que usas aquí se encargarán de traducir a código HTML y CSS que los navegadores web pueden leer y representar como una aplicación web.
+
+
 
 ---
 
@@ -282,7 +295,7 @@ class: center, middle
 `Ui &lt;- fluidPage(sidebarLayout(sidebarPanel(radioButtons(…)), mainPanel(…))`
 
 ---
-# Selección de inputs por el usuarie 🎚
+# Selección de inputs🎚
 
 Argumentos de la función `radioButtons()` 
 
@@ -298,6 +311,8 @@ radioButtons(inputId = `"axis_x"`,
 ---
 
 class: center, middle
+
+Ten cuidado cuando organizas la app
 
 &lt;img src="parentesis.png" width="90%" style="display: block; margin: auto;" /&gt;
 
@@ -322,18 +337,12 @@ class: center, middle
 
 class: center, middle
 
+Puedes mirar ejemplos con código de las partes que pueden componer una UI en la siguiente página: [Demos](https://shiny.rstudio.com/gallery/#demos)
+
+
 &lt;img src="mamu_8_sd.jpg" width="90%" style="display: block; margin: auto;" /&gt;
 
-
 ---
-
-class: center, middle, inverse
-
-# Para ejemplos de todo esto
-[Demos](https://shiny.rstudio.com/gallery/#demos)
-
----
-
 
 class: center, middle
 
@@ -361,7 +370,7 @@ class: center, middle
 
 ---
 
-## Agrega un tema: 📦`shinythemes `
+## Agrega un tema: 📦 `shinythemes `
 
 
 ```r
@@ -438,17 +447,10 @@ Ejemplos que incluyen [imagenes predeterminadas, pacmans y nubes de palabras](ht
 
 ---
 
-# `req()`
-
-Evita la ejecución antes que se seleccione la primer opción
-
-
----
-
 
 class: center, middle
 
-# Reactividad
+# Servidor y Reactividad
 
 
 &lt;img src="mamu_2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
@@ -474,29 +476,34 @@ class: center, middle
 
 **Server**
 
+1. Referite a las entradas esperadas usando `input$&lt;id&gt;`
+
 1. Selecciona las funciones `render*()` y `*Output()` adecuadas 
 
 1. Referite a las salidas esperadas usando `output$&lt;id&gt;`
 
-1. Referite a las entradas esperadas usando `input$&lt;id&gt;`
+
 
 ]
 
 ---
 
+# Servidor
 
-# Chequear que el código corre de antemano ✅
+&gt; Es en la función del servidor donde utilizarán los valores que los usuarios ingresaron para recrear resultados, obteniendo por ejemplo gráficos, tablas o texto.
+
+--
+
+&gt;Cada salida se guardará en un objeto especial llamado `output` el cual correctamente identificado se podrá referenciar en la UI para ubicarlo en la shiny app.
+ 
+---
+
+## Paso1: Chequear que el código corre de antemano ✅
 
 
 ```r
 library(ggplot2)
-```
 
-```
-## Warning: package 'ggplot2' was built under R version 3.6.3
-```
-
-```r
 ggplot(data = mpg)+
   geom_point(mapping = aes(x = displ,
                            y = hwy,
@@ -508,23 +515,23 @@ ggplot(data = mpg)+
 ---
 
 class: center, middle, inverse
-### 🔌 Conecta la elección del usuarie en el input con el código en el servidor, y luego el código del servidor con la salida del código 🤔🤯
+### 🔌 Conecta la elección del usuario con el código en el servidor, y luego el código del servidor con la UI 🤔🤯
 
 
 ---
 
-## Referite a las entradas (*inputs*) usando `input$&lt;id&gt;`
+
 
 &lt;img src="reactivity.png" width="90%" style="display: block; margin: auto;" /&gt;
 ---
 
 class: center, middle, inverse
-# 🔌 Conecta la elección en pantalla del usuarie con el código en el servidor ✅
+# 🔌 Conecta la elección en pantalla del usuario con el código en el servidor ✅
 
 
 
 ---
-## Referite a los valores de entrada (*inputs*) usando `input$&lt;id&gt;`
+## Paso2: Referite a los valores de entrada (*inputs*) usando `input$&lt;id&gt;`
 
 &lt;img src="reactivity3.png" width="90%" style="display: block; margin: auto;" /&gt;
 
@@ -541,7 +548,7 @@ class: center, middle, inverse
 &lt;img src="reactivity.png" width="90%" style="display: block; margin: auto;" /&gt;
 ---
 
-# Funciones `render*()` y `*Output()` 
+## Paso 3: Elegí las funciones `render*()` y `*Output()` 
 
 Conectan el código del servidor con la salida en pantalla.
 
@@ -549,7 +556,7 @@ Conectan el código del servidor con la salida en pantalla.
 
 ---
 
-## Referite a las salidas usando `output$&lt;id&gt;`
+## Paso 4: Referite a las salidas usando `output$&lt;id&gt;`
 
 Observa las funciones `render*()` y `*Output()` 
 
@@ -558,6 +565,8 @@ Observa las funciones `render*()` y `*Output()`
 ---
 
 # ¡Completamos la UI!
+
+En este caso, el gráfico se verá dentro del panel general ya que lo ubique dentro de `mainPanel()`.
 
 &lt;img src="slide_mamu3.png" width="90%" style="display: block; margin: auto;" /&gt;
 
@@ -568,108 +577,112 @@ class: inverse, center, middle
 
 # 💻 ¡Deja tu shiny app online!
 
----
-
-# shinyapps.io
-
-* gratis hasta 5 apps
-
 
 ---
 
-# Binder
+# ¡Deja tu shiny app online!
 
-* gratis pero con ciertas limitaciones (por ejemplo, no carga paquetes que no esten en CRAN)
+**1. shinyapps.io** 
 
-[Blog en español para aprender a usar Binder en tu Shiny app](https://florencia.netlify.app/es-es/2020/08/compartiendo-entornos-interactivos-y-reproducibles-en-r-con-binder.es-es/)
+- Gratis hasta 5 apps
+- Debes crearte una cuenta en [shinyapps.io](shinyapps.io)
+- Integrado a la consola de RStudio
+
+--
+
+**2. Binder**
+
+- Apps gratis ilimitadas
+- Solo puedes preinstalar paquetes que estan en CRAN
+- Limitaciones en las versiones de R que puedes usar
+
+[Blog en español ¿Cómo aprender a usar Binder en tu Shiny app?](https://florencia.netlify.app/es-es/2020/08/compartiendo-entornos-interactivos-y-reproducibles-en-r-con-binder.es-es/)
+
 
 ---
 
-# Armar un paquete 📦
-
-[]()
----
-
-# Golem
-
-[Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)
+# ¡Deja tu shiny app online!
 
 
-&lt;img src="golem.png" width="300" height="300" style="display: block; margin: auto;" /&gt;
+**3. Arma un paquete 📦**
+
+- Puedes aprender sobre cómo armar un paquete básico en este [libro](https://r-pkgs.org/whole-game.html)
+- Debes generar una función que llame a la app.
+
+--
+
+- No implica necesariamente subirlo a CRAN, pueden instalarlo directamente desde R si lo dejas en un repositorio público como GitHub.
+- Una forma más completa de dejar tu app como 📦 es usar `golem`. Puedes leer más sobre esto aquí: [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)
+
+
+&lt;img src="golem.png" width="100" height="100" style="display: block; margin: auto;" /&gt;
+
 
 
 ---
 
 class: inverse, center, middle
+
+### Shiny app para meetup de R-Ladies
+
+Aplicaciones web interactivas con Shiny - [Material para un meetup](  https://florencia.netlify.app/es-es/2020/02/intro_shiny.es-es/)
+https://github.com/flor14/rladies_shiny_meetup_2020.git
 
 &lt;img src="appfinal.png" width="90%" style="display: block; margin: auto;" /&gt;
 
----
 
-class: inverse, center, middle
-
-
-&lt;img src="appfinal.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 
 ---
 
 class: inverse, center, middle
 
-# Repo
+### Shiny app para Taller de Shiny en LatinR 2020
 
-https://github.com/flor14/rladies_shiny_meetup_2020
+Vilma Romero, Juan Cruz Rodríguez y Florencia D'Andrea
+https://github.com/flor14/latinr_shiny_2020.git
 
-![](https://media.giphy.com/media/X8HbeXDF7nzaM/200w_d.gif)
+
+&lt;img src="emojiapp.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-class: inverse, center, middle
+class: center, middle
 
 # Ejemplos
  
 [RStudio Shiny Gallery](https://shiny.rstudio.com/gallery/)
 
-[Winners of the 1st Shiny Contest](https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/)
+[Ganadores del primer concurso de Shiny apps (2019)](https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/)
+
+[Ganadores del segundo concurso de Shiny Apps (2020)](https://blog.rstudio.com/2020/07/13/winners-of-the-2nd-shiny-contest/)
 
 
-
----
-
-# Otros paquetes
-
-ShinyMobile
-
-
-
+![](https://media.giphy.com/media/X8HbeXDF7nzaM/200w_d.gif)
 
 ---
 
-class: inverse, center, middle
+class: center, middle
 
-# Links
+# Algunos links
  
  [Mastering Shiny](https://mastering-shiny.org/)
  
+ [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)
+ 
+ [Referencia de funciones de Shiny](https://shiny.rstudio.com/reference/shiny/1.5.0/)
+ 
  [Shiny's Holy Grail - UseR! 2019 - Joe Cheng  video](https://www.youtube.com/watch?v=5KByRC6eqC8)
  
- [Podcast Shiny]()
-
  [Tutorial R-Studio](https://shiny.rstudio.com/tutorial)
 
  [Javascript for Shiny Users](https://github.com/rstudio-conf-2020/js-for-shiny)
-
-[Golem Package](https://github.com/ThinkR-open/golem)
-
-[Shinytest](https://rstudio.github.io/shinytest/articles/package.html)
 
 ---
 
 class: center, middle
 
 # ¡Muchas gracias!
-
-[Florencia](@cantoflor_87)
 
 ![](https://media.giphy.com/media/3oEjHWPTo7c0ajPwty/giphy.gif)
 
