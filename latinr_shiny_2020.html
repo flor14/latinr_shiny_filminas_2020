@@ -4,6 +4,7 @@
     <title>Aplicaciones Web Interactivas con Shiny</title>
     <meta charset="utf-8" />
     <meta name="author" content="✨ 💻 ✨" />
+    <meta name="date" content="2020-01-01" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
@@ -24,8 +25,8 @@ class: center, middle, inverse, title-slide
 
 # Aplicaciones Web Interactivas con Shiny
 ### ✨ 💻 ✨
-### LatinR 2020
-### 8/10/2020
+### Conferencia LatinR
+### 2020
 
 ---
 
@@ -170,11 +171,11 @@ class: center, middle
 
 # ¿Qué es la interfaz de usuario?
 
-&gt; La UI es dónde define cómo se verá su aplicación. 
+&gt; La UI es dónde se define cómo se verá su aplicación. 
 
 --
 
-&gt; Las funciones de Shiny que usas aquí se encargarán de traducir a código HTML y CSS que los navegadores web pueden leer y representar como una aplicación web.
+&gt; Las funciones de Shiny que usas en la UI serán traducidas a código HTML y CSS que los navegadores web pueden leer y representar en forma de una aplicación web.
 
 
 
@@ -246,13 +247,12 @@ class: center, middle
 
 &lt;img src="slide_mamu1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
-`Ui &lt;- fluidPage(sidebarLayout(sidebarPanel(…), mainPanel(…))`
+`ui &lt;- fluidPage(sidebarLayout(sidebarPanel(…), mainPanel(…))`
 
 ---
 
 # Pestañas y diseño de paneles
 
-Estructura de una app con dos pestañas. Dentro de cada pestaña hay una barra lateral y un panel principal
 
 
 ```r
@@ -269,33 +269,46 @@ ui &lt;- fluidPage(navbarPage(title = "Datos",
                            ))
 ```
 
+--
+Estructura de una app que pose una barra de navegación `navbarPage()` con dos paneles `tabPanel()`.
 
+--
+Dentro de cada panel hay una función de diseño `sidebarLayout()` que permite incluir una barra lateral `sidebarPanel()` y un area principal `mainPanel()`
 
 ---
 
 class: center, middle, inverse
 
-# Inputs
+## Controles de entrada (*input control*)
 
 ---
 
-# Inputs
+## Funciones de control del entrada (*input control*)
 
-Collect values from the user
+Colecta los valores elegidos por el usuario
 
 &lt;img src="inputs.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 .footnote[Source: Guía Rápida Shiny - RStudio.]
 ---
 
+# ¿Cómo elegir?
+
+
+&lt;img src="worst_UI_TW.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
 class: center, middle
+
+# Usando funciones de diseño
 
 &lt;img src="slide_mamu2.png" width="90%" style="display: block; margin: auto;" /&gt;
 
-`Ui &lt;- fluidPage(sidebarLayout(sidebarPanel(radioButtons(…)), mainPanel(…))`
+`ui &lt;- fluidPage(sidebarLayout(sidebarPanel(radioButtons(…)), mainPanel(…))`
 
 ---
-# Selección de inputs🎚
+# Selección de valores de entrada (*inputs*)🎚
 
 Argumentos de la función `radioButtons()` 
 
@@ -364,7 +377,7 @@ class: center, middle
 
 ---
 
-## Agrega un tema: 📦`shinythemes `
+## Agrega un tema: 📦 `shinythemes `
 
 &lt;img src="shinythemes.png" width="70%" style="display: block; margin: auto;" /&gt;
 
@@ -575,12 +588,12 @@ En este caso, el gráfico se verá dentro del panel general ya que lo ubique den
 
 class: inverse, center, middle
 
-# 💻 ¡Deja tu shiny app online!
+# 💻 ¡¡Comparte tu shiny app!
 
 
 ---
 
-# ¡Deja tu shiny app online!
+# ¡Comparte tu shiny app!
 
 **1. shinyapps.io** 
 
@@ -601,7 +614,7 @@ class: inverse, center, middle
 
 ---
 
-# ¡Deja tu shiny app online!
+# ¡Comparte tu shiny app!
 
 
 **3. Arma un paquete 📦**

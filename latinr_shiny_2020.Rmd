@@ -186,11 +186,11 @@ knitr::include_graphics("mamu_4.jpg")
 
 # ¿Qué es la interfaz de usuario?
 
-> La UI es dónde define cómo se verá su aplicación. 
+> La UI es dónde se define cómo se verá su aplicación. 
 
 --
 
-> Las funciones de Shiny que usas aquí se encargarán de traducir a código HTML y CSS que los navegadores web pueden leer y representar como una aplicación web.
+> Las funciones de Shiny que usas en la UI serán traducidas a código HTML y CSS que los navegadores web pueden leer y representar en forma de una aplicación web.
 
 
 
@@ -268,13 +268,12 @@ class: center, middle
 knitr::include_graphics("slide_mamu1.png")
 ```
 
-`Ui <- fluidPage(sidebarLayout(sidebarPanel(…), mainPanel(…))`
+`ui <- fluidPage(sidebarLayout(sidebarPanel(…), mainPanel(…))`
 
 ---
 
 # Pestañas y diseño de paneles
 
-Estructura de una app con dos pestañas. Dentro de cada pestaña hay una barra lateral y un panel principal
 
 ```{r eval=FALSE, include=TRUE}
 
@@ -291,19 +290,23 @@ ui <- fluidPage(navbarPage(title = "Datos",
                            ))
 ```
 
+--
+Estructura de una app que pose una barra de navegación `navbarPage()` con dos paneles `tabPanel()`.
 
+--
+Dentro de cada panel hay una función de diseño `sidebarLayout()` que permite incluir una barra lateral `sidebarPanel()` y un area principal `mainPanel()`
 
 ---
 
 class: center, middle, inverse
 
-# Inputs
+## Controles de entrada (*input control*)
 
 ---
 
-# Inputs
+## Funciones de control del entrada (*input control*)
 
-Collect values from the user
+Colecta los valores elegidos por el usuario
 
 ```{r init4, echo=FALSE, fig.align="center", out.width='100%'}
 knitr::include_graphics("inputs.png")
@@ -312,16 +315,27 @@ knitr::include_graphics("inputs.png")
 .footnote[Source: Guía Rápida Shiny - RStudio.]
 ---
 
+# ¿Cómo elegir?
+
+
+```{r uinig, echo=FALSE, fig.align="center", out.width='70%'}
+knitr::include_graphics("worst_UI_TW.png")
+```
+
+---
+
 class: center, middle
+
+# Usando funciones de diseño
 
 ```{r radiobut, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("slide_mamu2.png")
 ```
 
-`Ui <- fluidPage(sidebarLayout(sidebarPanel(radioButtons(…)), mainPanel(…))`
+`ui <- fluidPage(sidebarLayout(sidebarPanel(radioButtons(…)), mainPanel(…))`
 
 ---
-# Selección de inputs🎚
+# Selección de valores de entrada (*inputs*)🎚
 
 Argumentos de la función `radioButtons()` 
 
@@ -408,7 +422,7 @@ knitr::include_graphics("structure.png")
 
 ---
 
-## Agrega un tema: 📦`shinythemes `
+## Agrega un tema: 📦 `shinythemes `
 
 ```{r theme, echo=FALSE, fig.align="center", out.width='70%'}
 knitr::include_graphics("shinythemes.png")
@@ -640,12 +654,12 @@ knitr::include_graphics("slide_mamu3.png")
 
 class: inverse, center, middle
 
-# 💻 ¡Deja tu shiny app online!
+# 💻 ¡¡Comparte tu shiny app!
 
 
 ---
 
-# ¡Deja tu shiny app online!
+# ¡Comparte tu shiny app!
 
 **1. shinyapps.io** 
 
@@ -666,7 +680,7 @@ class: inverse, center, middle
 
 ---
 
-# ¡Deja tu shiny app online!
+# ¡Comparte tu shiny app!
 
 
 **3. Arma un paquete 📦**
